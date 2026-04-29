@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCNA -虎の巻-</title>
+    <meta name="description" content="CCNA試験対策のための練習問題や実機シミュレーターのリンクまとめサイトです。">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="login-overlay">
+        <div class="login-card">
+            <h2>Portal Login</h2>
+            <div class="input-group">
+                <label for="username">ID</label>
+                <input type="text" id="username" placeholder="Enter ID">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter Password">
+            </div>
+            <button class="login-button" onclick="checkLogin()">Login</button>
+            <p id="error-message"></p>
+        </div>
+    </div>
+
+    <div id="main-content">
+
+        <main>
+            <section class="hero">
+                <img src="ccnatiger_logo.png" alt="CCNA Knowledge Hub -合格虎の巻-" class="main-logo">
+            </section>
+
+            <section class="resource-grid">
+                <!-- 選択問題 Section -->
+                <div class="category-card">
+                    <h2>
+                        <img src="title1.svg" alt="選択問題" class="category-title-img">
+                    </h2>
+                    <div class="link-group">
+                        <a href="https://script.google.com/macros/s/AKfycbx7VgtOU_A3hBVZBgKUTnwrSoxtF9W-pefP4IixFk826D3Z9ayN8vNfXBOnTGZ49CBy/exec"
+                            target="_blank" class="resource-link link-practice">
+                            <span>練習</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- D&D Section -->
+                <div class="category-card">
+                    <h2>
+                        <img src="title2.svg" alt="D&D" class="category-title-img">
+                    </h2>
+                    <div class="link-group">
+                        <a href="https://script.google.com/macros/s/AKfycbxVX70Z3UhvnzA0EFq9JsAjlwiierFAvVjyGbBW2ZpkBHPGudiNq8BXTAzE2xNJmtM/exec" target="_blank"
+                            class="resource-link link-practice">
+                            <span>練習</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 実機 Section -->
+                <div class="category-card">
+                    <h2>
+                        <img src="title3.svg" alt="シミュレーション" class="category-title-img">
+                    </h2>
+                    <div class="link-group">
+                        <a href="https://baudroie.github.io/ccnasim_practice/" target="_blank"
+                            class="resource-link link-practice">
+                            <span>練習</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="contact-section">
+                <h3>お問い合わせ窓口/試験後フィードバック</h3>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScXssGw7j0zO7HOU5fU-BEmkgWbI2vw5eVzGkLghh9gMH7EKg/viewform?usp=publish-editor"
+                    target="_blank" class="resource-link link-practice contact-button">
+                    <span>不具合報告/機能改善リクエストはこちら</span>
+                </a>
+                <a href="https://script.google.com/macros/s/AKfycbwQo3_XE9HP7kb-1px4VhSl_Nkmyi6rZCZffsuxZ18ri6ubT2gQY5OEPXyao0CjsDBe/exec"
+                    target="_blank" class="resource-link link-practice contact-button">
+                    <span>試験合格フィードバックはこちら</span>
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function checkLogin() {
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            const error = document.getElementById('error-message');
+
+            if (user === 'ccnatiger' && pass === 'ccnatiger') {
+                document.getElementById('login-overlay').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+            } else {
+                error.textContent = 'IDまたはパスワードが正しくありません。';
+            }
+        }
+
+        // Allow 'Enter' key to trigger login
+        document.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                checkLogin();
+            }
+        });
+    </script>
+</body>
+
+</html>
